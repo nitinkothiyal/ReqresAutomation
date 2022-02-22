@@ -1,0 +1,1 @@
+{"uuid":"f6274cee-9c60-4d8b-9bc2-127da0dba04f","name":"PostRegisterSuccessful","children":["d3f8f978-2b27-4e1b-8a55-59b7a9284bde"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1645429448675,"stop":1645429448675}],"afters":[],"start":1645429444399,"stop":1645429461811}

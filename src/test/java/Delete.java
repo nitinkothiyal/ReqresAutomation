@@ -13,15 +13,17 @@ public class Delete {
 
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
     }
     @Test
     public static void delete(){
-        String pathParams = "users/2";
+        String pathParams = "/2";
         given().
-                delete(pathParams).
-                then().
-                statusCode(204).log().all();
+                delete(END_POINT).
+        then().
+                assertThat().
+                statusCode(204).
+                log().all();
     }
 }

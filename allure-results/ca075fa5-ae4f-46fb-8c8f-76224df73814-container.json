@@ -1,0 +1,1 @@
+{"uuid":"ca075fa5-ae4f-46fb-8c8f-76224df73814","name":"GetListUser","children":["5f128cc2-3e66-41f2-bc1b-46e350caa121"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1645429459626,"stop":1645429459626}],"afters":[],"start":1645429444398,"stop":1645429461808}

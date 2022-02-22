@@ -1,8 +1,6 @@
 import io.restassured.http.ContentType;
 import org.json.simple.JSONObject;
-import org.testng.annotations.Test;
 import org.testng.annotations.*;
-
 import static Utils.Constants.*;
 import static io.restassured.RestAssured.*;
 
@@ -15,26 +13,25 @@ Created by Nitin Kothiyal
 public class PostCreate {
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
     }
     @Test
     public void postCreate(){
-        String pathParams = "users";
 
         //Storing key and values in json object
         JSONObject request = new JSONObject();
-        request.put("name", "morpheus");
-        request.put("job", "leader");
-
+        request.put("name", NAME);
+        request.put("job", JOB);
 
         given().
                 header("Content-type", "application/json").
                 contentType(ContentType.JSON).
                 body(request.toJSONString()).
         when().
-                post(pathParams).
+                post(END_POINT).
         then().
+                assertThat().
                 statusCode(201).
                 log().all();
     }

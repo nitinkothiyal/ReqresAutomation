@@ -12,14 +12,13 @@ Created by Nitin Kothiyal
 public class GetSingleUser {
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
     }
     @Test
     public void getCall(){
-        String pathParams = "users/2";
         given().
-                get(pathParams).
+                get(END_POINT).
                 then().
                 statusCode(200).
                 log().all();

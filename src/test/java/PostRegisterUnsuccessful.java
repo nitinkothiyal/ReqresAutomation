@@ -14,12 +14,11 @@ Created by Nitin Kothiyal
 public class PostRegisterUnsuccessful {
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
     }
     @Test
     public void postRegisterUnsuccessful(){
-        String pathParams = "register";
 
         //Storing keys & values
         JSONObject request = new JSONObject();
@@ -30,7 +29,7 @@ public class PostRegisterUnsuccessful {
                 contentType(ContentType.JSON).
                 body(request.toJSONString()).
         when().
-                post(pathParams).
+                post(REGISTER).
                 then().
                 statusCode(400).
                 log().all();

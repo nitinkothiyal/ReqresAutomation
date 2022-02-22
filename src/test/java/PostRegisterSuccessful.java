@@ -14,26 +14,26 @@ Created by Nitin Kothiyal
 public class PostRegisterSuccessful {
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
 
     }
     @Test
     public void postRegisterSuccessful(){
-        String pathParams = "register";
 
         //Storing keys and values
         JSONObject request = new JSONObject();
-        request.put("email", "eve.holt@reqres.in");
-        request.put("password", "pistol");
+        request.put("email", EMAIL);
+        request.put("password", PASSWORD);
 
         given().
                 header("Content-type", "application/json").
                 contentType(ContentType.JSON).
                 body(request.toJSONString()).
         when().
-                post(pathParams).
+                post(REGISTER).
         then().
+                assertThat().
                 statusCode(200).
                 log().all();
     }

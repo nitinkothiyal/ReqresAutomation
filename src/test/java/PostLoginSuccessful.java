@@ -3,7 +3,6 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.*;
 import static io.restassured.RestAssured.*;
 import static Utils.Constants.*;
-
 /*
 RestAsssured BDD
 API Testing Automation Framework
@@ -13,26 +12,27 @@ Created by Nitin Kothiyal
 public class PostLoginSuccessful {
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
     }
     @Test
     public void postLoginSuccessful(){
-        String endPoint = "login";
 
         //Storing keys & values
         JSONObject request = new JSONObject();
-        request.put("email", "eve.holt@reqres.in");
-        request.put("password", "cityslicka");
+
+        request.put("email", EMAIL);
+        request.put("password", PASSWORD);
 
         given().
                 header("Content-type", "application/json").
                 contentType(ContentType.JSON).
                 body(request.toJSONString()).
         when().
-                post(endPoint).
+                post(LOGIN).
         then().
+                assertThat().
                 statusCode(200).
-                log().everything();
+                log().all();
     }
 }

@@ -13,13 +13,14 @@ Created by Nitin Kothiyal
 public class GetSingleUSerNotFound {
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
     }
     @Test
     public void singleUSerNotFound(){
+        String pathParams = "/6";
         given().
-                get("users/6").
+                get(END_POINT+pathParams).
         then().
                 log().all();
     }

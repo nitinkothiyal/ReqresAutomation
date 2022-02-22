@@ -12,17 +12,16 @@ Created by Nitin Kothiyal
 public class GetDelayedResponse {
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
     }
     @Test
     public void getDelayedResponse(){
-        String pathParams = "users";
         String queryParams = "delay=3";
 
         given().
         when().
-                get(pathParams+queryParams).
+                get(END_POINT+queryParams).
         then().
                 statusCode(200).
                 log().everything();

@@ -14,12 +14,12 @@ Created by Nitin Kothiyal
 public class PatchUpdate {
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
     }
     @Test
     public void patchUpdate(){
-        String pathParams = "users/2";
+        String pathParams = "/2";
         JSONObject request = new JSONObject();
         request.put("name", "morpheus");
         request.put("job", "zion resident");
@@ -29,7 +29,7 @@ public class PatchUpdate {
                 contentType(ContentType.JSON).
                 body(request.toJSONString()).
         when().
-                patch(pathParams).
+                patch(END_POINT+pathParams).
                 then().
                 statusCode(200).
                 log().all();

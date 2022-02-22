@@ -13,16 +13,15 @@ Created by Nitin Kothiyal
 public class GetListUser {
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
     }
 
     @Test
     public void getCall(){
-        String pathParams = "users?";
         String queryParams = "page=2";
         given().
-                get(pathParams+queryParams).
+                get(END_POINT2+queryParams).
                 then().
                 statusCode(200).
                 log().all();

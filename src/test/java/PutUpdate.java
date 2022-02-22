@@ -12,12 +12,12 @@ Created by Nitin Kothiyal
 public class PutUpdate {
     @BeforeClass
     public void setup(){
-        baseURI = apiURI;
-        basePath = apiPath;
+        baseURI = BASE_URI;
+        basePath = BASE_PATH;
     }
     @Test
     public void putUpdate(){
-        String pathParams = "users/2";
+        String pathParams = "/2";
 
         //Storing key and values in json object
         JSONObject request = new JSONObject();
@@ -29,7 +29,7 @@ public class PutUpdate {
                 contentType(ContentType.JSON).
                 body(request.toJSONString()).
         when().
-                put(pathParams).
+                put(END_POINT+pathParams).
         then().
                 statusCode(200).
                 log().all();

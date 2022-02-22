@@ -1,0 +1,1 @@
+{"uuid":"be13b52c-cabe-4986-a5c7-771a1802832c","name":"E2E","children":["203ed781-a984-486f-9cff-fc394b213ebe"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1645291198959,"stop":1645291199744}],"afters":[],"start":1645291198890,"stop":1645291203034}
